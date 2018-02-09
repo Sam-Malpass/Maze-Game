@@ -134,3 +134,22 @@ int GenerateLeftRight(int Direction, int X)
 		return X;
 	}
 }
+/*Function Definition - GenerateUpDown*/
+int GenerateUpDown(int Direction, int Y)
+{
+	/*Move the Generator Up by a Y Co-Ordinate*/
+	if (Direction == UP)
+	{
+		return Y - 1;
+	}
+	/*Move the Generator Down by a Y Co-Ordinate*/
+	else if (Direction == DOWN)
+	{
+		return Y + 1;
+	}
+	/*Otherwise Just Return Current Y Co-Ordinate*/
+	else
+	{
+		return Y;
+	}
+}
