@@ -44,3 +44,21 @@ int FindStartY(char Maze[HEIGHT][WIDTH])
 		}
 	}
 }
+/*Function Definition - FindStartX*/
+int FindStartX(char Maze[HEIGHT][WIDTH])
+{
+	/*For Each Character on Y-Axis*/
+	for (int IteratorY = 0; IteratorY < HEIGHT; IteratorY++)
+	{
+		/*For Each Character on X-Axis*/
+		for (int IteratorX = 0; IteratorX < WIDTH; IteratorX++)
+		{
+			/*If Character is Player*/
+			if (Maze[IteratorY][IteratorX] == 'O')
+			{
+				/*Return X Co-Ordinate*/
+				return IteratorX;
+			}
+		}
+	}
+}
