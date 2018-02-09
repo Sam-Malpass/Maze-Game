@@ -56,3 +56,12 @@ void HowToPlay()
 	/*Returns to the Main Menu*/
 	return;
 }
+/*Function Definition - PlayGame*/
+void PlayGame()
+{
+	/*Clear the Console Window*/
+	system("cls");
+	/*Call StartGame*/
+	StartGame();
+	return;
+}
