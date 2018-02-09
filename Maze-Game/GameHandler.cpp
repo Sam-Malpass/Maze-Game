@@ -159,3 +159,140 @@ void Inputting(char Maze[HEIGHT][WIDTH], int Y, int X)
 		}
 	}
 }
+/*Function Definiton - MovementCheck*/
+bool MovementCheck(char Maze[HEIGHT][WIDTH], int Y, int X, char Key)
+{
+	/*Begin by Re-Checking Which Key was Entered*/
+	if (Key == 'w' || Key == 'W')
+	{
+		/*Check if Moving to Completion of Maze*/
+		if (Maze[Y - 1][X] == 'X')
+		{
+			/*Clears Console Window*/
+			system("cls");
+			/*Opens Data File*/
+			ifstream Open("Level Complete.txt");
+			/*Initializes the String with Data From Function Call*/
+			string LevelComplete = ReadFile(Open);
+			/*Outputs the Data*/
+			cout << LevelComplete << endl;
+			/*Closes File*/
+			Open.close();
+			/*Wait for Set Period of Time*/
+			Sleep(1500);
+			/*Score Sorting*/
+			ScoreHandling();
+			/*Reset Game*/
+			IsFinished = true;
+			/*Add to Move Number*/
+			Moves++;
+			return true;
+		}
+		/*Check if Movement Will Lead to Wall*/
+		if (Maze[Y - 1][X] != ' ')
+		{
+			/*Return Movement Isn't Possible*/
+			return false;
+		}
+	}
+	if (Key == 'a' || Key == 'A')
+	{
+		/*Check if Moving to Completion of Maze*/
+		if (Maze[Y][X - 1] == 'X')
+		{
+			/*Clears Console Window*/
+			system("cls");
+			/*Opens Data File*/
+			ifstream Open("Level Complete.txt");
+			/*Initializes the String with Data From Function Call*/
+			string LevelComplete = ReadFile(Open);
+			/*Outputs the Data*/
+			cout << LevelComplete << endl;
+			/*Closes File*/
+			Open.close();
+			/*Wait for Set Period of Time*/
+			Sleep(1500);
+			/*Score Sorting*/
+			ScoreHandling();
+			/*Reset Game*/
+			IsFinished = true;
+			/*Add to Move Number*/
+			Moves++;
+			return true;
+		}
+		/*Check if Movement Will Lead to Wall*/
+		if (Maze[Y][X - 1] != ' ')
+		{
+			/*Return Movement Isn't Possible*/
+			return false;
+		}
+	}
+	if (Key == 's' || Key == 'S')
+	{
+		/*Check if Moving to Completion of Maze*/
+		if (Maze[Y + 1][X] == 'X')
+		{
+			/*Clears Console Window*/
+			system("cls");
+			/*Opens Data File*/
+			ifstream Open("Level Complete.txt");
+			/*Initializes the String with Data From Function Call*/
+			string LevelComplete = ReadFile(Open);
+			/*Outputs the Data*/
+			cout << LevelComplete << endl;
+			/*Closes File*/
+			Open.close();
+			/*Wait for Set Period of Time*/
+			Sleep(1500);
+			/*Score Sorting*/
+			ScoreHandling();
+			/*Reset Game*/
+			IsFinished = true;
+			/*Add to Move Number*/
+			Moves++;
+			return true;
+		}
+		/*Check if Movement Will Lead to Wall*/
+		if (Maze[Y + 1][X] != ' ')
+		{
+			/*Return Movement Isn't Possible*/
+			return false;
+		}
+	}
+	if (Key == 'd' || Key == 'D')
+	{
+		/*Check if Moving to Completion of Maze*/
+		if (Maze[Y][X + 1] == 'X')
+		{
+			/*Clears Console Window*/
+			system("cls");
+			/*Opens Data File*/
+			ifstream Open("Level Complete.txt");
+			/*Initializes the String with Data From Function Call*/
+			string LevelComplete = ReadFile(Open);
+			/*Outputs the Data*/
+			cout << LevelComplete << endl;
+			/*Closes File*/
+			Open.close();
+			/*Wait for Set Period of Time*/
+			Sleep(1500);
+			/*Score Sorting*/
+			ScoreHandling();
+			/*Reset Game*/
+			IsFinished = true;
+			/*Add to Move Number*/
+			Moves++;
+			return true;
+		}
+		/*Check if Movement Will Lead to Wall*/
+		if (Maze[Y][X + 1] != ' ')
+		{
+			/*Return Movement Isn't Possible*/
+			return false;
+		}
+	}
+	/*Add to Move Number*/
+	Moves++;
+	/*After All Checks Have Been Passed, Returns that Movement is Possible*/
+	return true;
+}
