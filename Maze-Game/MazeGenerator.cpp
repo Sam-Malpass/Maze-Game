@@ -115,3 +115,22 @@ void Generator()
 	}
 	return;
 }
+/*Function Definition - GenerateLeftRight*/
+int GenerateLeftRight(int Direction, int X)
+{
+	/*Move the Generator Right by an X Co-Ordinate*/
+	if (Direction == RIGHT)
+	{
+		return X + 1;
+	}
+	/*Move the Generator Left by an X Co-Ordinate*/
+	else if (Direction == LEFT)
+	{
+		return X - 1;
+	}
+	/*Otherwise Just Return Current X Co-Ordinate*/
+	else
+	{
+		return X;
+	}
+}
