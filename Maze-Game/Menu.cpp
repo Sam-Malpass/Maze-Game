@@ -18,3 +18,22 @@ void Credits()
 	/*Returns to the Main Menu*/
 	return;
 }
+/*Function Definition - Controls*/
+void Controls()
+{
+	/*Clear Console Window*/
+	system("cls");
+	/*Open File*/
+	ifstream Open("Controls.txt");
+	/*Initializes a String with Data from Function Call*/
+	string Controls = ReadFile(Open);
+	/*Outputs String to Console*/
+	cout << Controls << endl;
+	/*Close File*/
+	Open.close();
+	/*Wait for User to Leave Page*/
+	cout << "					    ";
+	system("pause");
+	/*Returns to the Main Menu*/
+	return;
+}
