@@ -153,3 +153,58 @@ int GenerateUpDown(int Direction, int Y)
 		return Y;
 	}
 }
+/*Function Definition - IsGenerationGood*/
+bool IsGenerationGood(int X, int Y, int Direction, char Maze[HEIGHT][WIDTH])
+{
+	/*Getting Cell Co-Ordinates*/
+	Y = GenerateUpDown(Direction, Y);
+	X = GenerateLeftRight(Direction, X);
+	/*If Cell is Already a Path or a Maze Boundary*/
+	if (X <= 0 || Y <= 0 || X >= (WIDTH - 1) || Y >= (HEIGHT - 1) || Maze[Y][X] == ' ')
+	{
+		/*Return that Generation is not Possible*/
+		return false;
+	}
+	/*If Generation Direction is Up*/
+	if (Direction == UP)
+	{
+		/*Check Cells Around are Walls*/
+		if (Maze[Y - 1][X + 1] != ' ' && Maze[Y][X - 1] != ' ' && Maze[Y - 1][X - 1] != ' ' && Maze[Y - 1][X] != ' ' && Maze[Y - 1][X - 1] != ' ')
+		{
+			/*Return that Generation is Possible*/
+			return true;
+		}
+	}
+	/*If Generation Direction is Left*/
+	if (Direction == LEFT)
+	{
+		/*Check Cells Around are Walls*/
+		if (Maze[Y + 1][X - 1] != ' ' && Maze[Y][X - 1] != ' ' && Maze[Y - 1][X - 1] != ' ' && Maze[Y - 1][X] != ' ' && Maze[Y + 1][X] != ' ')
+		{
+			/*Return that Generation is Possible*/
+			return true;
+		}
+	}
+	/*If Generation Direction is Down*/
+	if (Direction == DOWN)
+	{
+		/*Check Cells Around are Walls*/
+		if (Maze[Y + 1][X + 1] != ' ' && Maze[Y][X - 1] != ' ' && Maze[Y + 1][X - 1] != ' ' && Maze[Y + 1][X] != ' ' && Maze[Y][X + 1] != ' ')
+		{
+			/*Return that Generation is Possible*/
+			return true;
+		}
+	}
+	/*If Generation Direction is Right*/
+	if (Direction == RIGHT)
+	{
+		/*Check Cells Around are Walls*/
+		if (Maze[Y + 1][X + 1] != ' ' && Maze[Y][X + 1] != ' ' && Maze[Y - 1][X + 1] != ' ' && Maze[Y - 1][X] != ' ' && Maze[Y + 1][X] != ' ')
+		{
+			/*Return that Generation is Possible*/
+			return true;
+		}
+	}
+	/*Failing All Checks Results in Returning False*/
+	return false;
+}
