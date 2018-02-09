@@ -6,3 +6,8 @@
 #define LEFT 3
 #define UP 0
 #define DOWN 1
+/*Definitions for Scoring*/
+#define LOW 250
+#define MED 500
+#define HIGH 750
+#define MAX 1000
