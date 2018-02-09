@@ -296,3 +296,33 @@ bool MovementCheck(char Maze[HEIGHT][WIDTH], int Y, int X, char Key)
 	/*After All Checks Have Been Passed, Returns that Movement is Possible*/
 	return true;
 }
+/*Function Definition - ScoreHandling*/
+void ScoreHandling()
+{
+	/*If Number of Moves is Low*/
+	if (Moves <= LOW)
+	{
+		Score = Score + 100;
+	}
+	/*If Number of Moves is Average*/
+	else if (Moves > LOW && Moves <= MED)
+	{
+		Score = Score + 75;
+	}
+	/*If Number of Moves is High*/
+	else if (Moves > MED && Moves <= HIGH)
+	{
+		Score = Score + 50;
+	}
+	/*If Number of Moves is Extremely High*/
+	else if (Moves > HIGH && Moves <= MAX)
+	{
+		Score = Score + 25;
+	}
+	/*Otherwise Don't Increase Score*/
+	else
+	{
+		Score = Score + 0;
+	}
+	return;
+}
