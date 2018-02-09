@@ -65,3 +65,57 @@ void PlayGame()
 	StartGame();
 	return;
 }
+/*Function Definition - MainMenu*/
+void MainMenu()
+{
+	/*Variable Declaration*/
+	char UserOption;
+	bool RunMenuInfinitely = true;
+	/*Plays Music by Kevin Macleod*/
+	PlaySoundA(("Menu.WAV"), NULL, SND_ASYNC | SND_LOOP);
+	/*Displays Menu Indefinitely*/
+	while (RunMenuInfinitely)
+	{
+		/*Clear Console Window*/
+		system("cls");
+		/*Open File*/
+		ifstream Open("Title.txt");
+		/*Initializes a String with Data from Function Call*/
+		string Menu = ReadFile(Open);
+		/*Outputs String to Console*/
+		cout << Menu << endl;
+		/*Close File*/
+		Open.close();
+		/*Prints UserOption Input Field*/
+		cout << "						    Option:    ";
+		/*Takes the User's Input and Stores it in UserOption*/
+		cin >> UserOption;
+		/*Compares Input to See if Operation is Performed*/
+		switch (UserOption)
+		{
+			/*Runs the Game*/
+		case '1':
+			PlayGame();
+			break;
+			/*Displays Controls*/
+		case '2':
+			Controls();
+			break;
+			/*Displays How To Play*/
+		case '3':
+			HowToPlay();
+			break;
+			/*Displays Credits*/
+		case '4':
+			Credits();
+			break;
+			/*Exits Game*/
+		case '5':
+			exit(0);
+			break;
+			/*Refreshes Menu with Invalid Input*/
+		default:
+			break;
+		}
+	}
+}
