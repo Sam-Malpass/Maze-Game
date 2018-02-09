@@ -37,3 +37,22 @@ void Controls()
 	/*Returns to the Main Menu*/
 	return;
 }
+/*Function Definition - HowToPlay*/
+void HowToPlay()
+{
+	/*Clear Console Window*/
+	system("cls");
+	/*Open File*/
+	ifstream Open("How to Play.txt");
+	/*Initializes a String with Data from Function Call*/
+	string HowToPlay = ReadFile(Open);
+	/*Outputs String to Console*/
+	cout << HowToPlay << endl;
+	/*Close File*/
+	Open.close();
+	/*Wait for User to Leave Page*/
+	cout << "					    ";
+	system("pause");
+	/*Returns to the Main Menu*/
+	return;
+}
