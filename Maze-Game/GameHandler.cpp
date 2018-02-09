@@ -26,3 +26,21 @@ void StartGame()
 	/*Return when Finished*/
 	return;
 }
+/*Function Definition - FindStartY*/
+int FindStartY(char Maze[HEIGHT][WIDTH])
+{
+	/*For each Character on Y-Axis*/
+	for (int IteratorY = 0; IteratorY < HEIGHT; IteratorY++)
+	{
+		/*For Each Character on X-Axis*/
+		for (int IteratorX = 0; IteratorX < WIDTH; IteratorX++)
+		{
+			/*If Character is Player*/
+			if (Maze[IteratorY][IteratorX] == 'O')
+			{
+				/*Return Y Co-Ordinate*/
+				return IteratorY;
+			}
+		}
+	}
+}
